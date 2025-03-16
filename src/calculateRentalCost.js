@@ -5,12 +5,15 @@
  */
 function calculateRentalCost(days) {
   const dayRent = 40;
+  const discountThreshold1 = 3;
+  const discountThreshold2 = 7;
+
   let totalCost = days * dayRent;
 
-  if (days >= 7) {
-    totalCost -= 50;
-  } else if (days >= 3) {
+  if (days >= discountThreshold1) {
     totalCost -= 20;
+  } else if (days >= discountThreshold2) {
+    totalCost -= 50;
   }
 
   return totalCost;
